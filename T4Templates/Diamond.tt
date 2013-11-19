@@ -1,0 +1,147 @@
+﻿<#@ template language="C#" #>
+<#@ output encoding="utf-8"#>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="C:\Workarea\Prototype\Diamond\bin\Debug\Diamond.Tds.dll" #>
+<#@ import namespace="Diamond.Tds" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models" #>
+<#@ parameter name="Model" type="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models.SitecoreItem" #>
+<#@ parameter name="DefaultNamespace" type="System.String" #>
+<#
+// Limit the scope to Templates we are interested in.
+SitecoreTemplate template = Model as SitecoreTemplate;
+if (template == null || template.Path.Contains("Web Forms for Marketers") || template.Path.Contains("Branches") || template.Path.Contains("System"))
+{
+	return string.Empty;
+}
+#>
+namespace <#= ParsingUtility.GetNamespace(DefaultNamespace, template)#>
+{
+	[TemplateID("<#= template.ID.ToString() #>")]
+	public partial interface <#= template.Name.AsInterfaceName() #> : IStandardTemplate <#if (template.BaseTemplates.Count > 0) { #><#= ParsingUtility.GetInheritanceChain(DefaultNamespace, template) #> <# } #>
+	{
+<#
+foreach(SitecoreField field in ParsingUtility.GetFieldsForTemplate(template, false))
+{
+	string fieldType = GetCustomFieldType(field);
+#>
+		<#=fieldType#> <#= ParsingUtility.GetPropertyName(field) #>  { get; }
+<#
+} // end foreach getfields for template
+#>	
+	} // end interface
+<#
+if (!template.Namespace.Contains("Interfaces"))
+{
+#>
+	[TemplateID("<#= template.ID.ToString() #>")]
+	public partial class <#= template.Name.AsClassName() #> : StandardTemplate, <#= template.Name.AsInterfaceName() #>
+	{
+		public static ID SourceTemplateID 
+		{
+			get { return new ID("<#= template.ID.ToString() #>"); }
+		}
+
+		public <#= template.Name.AsClassName() #>(Item innerItem) : base(innerItem) { }
+<#
+	foreach(SitecoreField field in ParsingUtility.GetFieldsForTemplate(template, true))
+	{
+		string fieldType = GetCustomFieldType(field);
+		string privateName = "_" + ParsingUtility.GetPropertyName(field).ToLower();
+#>
+		private <#=fieldType#> <#=privateName#>;
+		public <#=fieldType#> <#= ParsingUtility.GetPropertyName(field) #> 
+		{
+			get { return <#=privateName#> ?? (<#=privateName#> = new <#=fieldType#>(this.GetField("<#=field.ID.ToString()#>"))); }
+		}
+<#
+	} // end foreach getfields for template
+#>
+	} // end class
+<#
+} // end only build concrete for non-interface templates.
+#>
+} // end namespace
+
+<#+
+// Gets the Content field type for the Sitecore field
+public static string GetCustomFieldType(SitecoreField field)
+{
+	if (field != null && field.Type != null)
+	{
+		switch(field.Type.ToLower())
+		{			
+			// one-to-one matches
+			case "checkbox":
+				return "CheckboxProperty";
+
+			case "date":
+			case "datetime":
+				return "DateProperty";
+
+			case "file":
+			case "site based file":	// Spark library
+				return "FileProperty";
+
+			case "general link":
+				return "LinkProperty";
+
+			case "grouped droplink":
+				return "GroupedDroplinkProperty";
+
+			case "html":
+				return "HtmlProperty";
+
+			case "image":
+			case "site based image": // Spark library
+				return "ImageProperty";
+		
+			// links
+			case "droplink":
+			case "droptree":
+			case "lookup":
+			case "site based droptree":
+			case "tree":
+				return "LookupProperty";
+
+			case "reference":
+				return "ReferenceProperty";
+
+			// text
+			case "integer":
+			case "number":	
+			case "memo":
+			case "multi-line text":
+			case "rich text":
+			case "single-line text":
+			case "text":
+				return "TextProperty";
+		
+			// lists
+			case "checklist":	
+			case "droplist":
+			case "grouped droplist":
+			case "filtered multilist":
+			case "multilist":
+			case "queryable treelist":
+			case "site based facets":
+			case "site based multilist":
+			case "site based treelist":
+			case "tokenized list":
+			case "treelist":
+			case "treelistex":
+				return "MultilistProperty";
+
+			default:
+				return "TextProperty";
+		}
+	}
+	else 
+	{
+	   throw new Exception("There is no 'Type' field on the " + field.Name + " field.");
+	}
+} 
+#>
