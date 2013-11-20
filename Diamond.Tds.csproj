@@ -52,20 +52,15 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Diamond\Diamond.csproj">
-      <Project>{1b1352bc-6fc7-4398-ba44-3882923d4b8e}</Project>
-      <Name>Diamond</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="T4Templates\Diamond.tt">
+    <Content Include="T4Templates\Diamond.tt">
       <LastGenOutput>Diamond.cs</LastGenOutput>
-    </None>
-    <None Include="T4Templates\DiamondHeader.tt">
+    </Content>
+    <Content Include="T4Templates\DiamondHeader.tt">
       <LastGenOutput>DiamondHeader.cs</LastGenOutput>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="_Instructions.txt" />
     <Content Include="_Important.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
