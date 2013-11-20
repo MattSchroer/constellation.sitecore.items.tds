@@ -52,6 +52,7 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Diamond.Tds.License.txt" />
     <Content Include="T4Templates\Diamond.tt">
       <LastGenOutput>Diamond.cs</LastGenOutput>
     </Content>

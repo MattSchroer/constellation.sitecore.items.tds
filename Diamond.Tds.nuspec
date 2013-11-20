@@ -15,7 +15,7 @@
 	<summary>
 	Diamond class generating T4 templates and helpful utilities for Hedgehog TDS projects.
 	</summary>
-	<releaseNotes>Removed dependency on Diamond.dll, which is not used by this project.</releaseNotes>
+	<releaseNotes>Added license file.</releaseNotes>
 	<copyright>Copyright 2013</copyright>
 	<tags>Sitecore, HHogDev, Hedgehog, TDS, Team Development for Sitecore</tags>
   </metadata>
