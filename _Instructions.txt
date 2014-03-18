@@ -1,0 +1,10 @@
+﻿1.	Configure your TDS project to generate code. Leave the template file references blank for now.
+
+2.	Copy the T4Templates\*.tt files to your TDS project. (You can then remove the *.tt files from this project)
+
+3.	In your TDS project's Code Generation tab, specify DiamondHeader.tt and Diamond.tt as your template files.
+
+4.	Adjust the Assembly reference in Diamond.tt to point to the folder location for the Diamond.TDS.dll assembly file.
+
+5.	Build this project to create the Diamond.TDS.dll (otherwise code generation will fail).
+
