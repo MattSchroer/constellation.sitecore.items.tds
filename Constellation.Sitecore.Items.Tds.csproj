@@ -7,8 +7,8 @@
     <ProjectGuid>{D61947D7-8992-4FDD-885D-A7FE4B169C64}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Diamond.Tds</RootNamespace>
-    <AssemblyName>Diamond.Tds</AssemblyName>
+    <RootNamespace>Constellation.Sitecore.Items.Tds</RootNamespace>
+    <AssemblyName>Constellation.Sitecore.Items.Tds</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,9 +33,6 @@
     <Reference Include="HedgehogDevelopment.SitecoreProject.VSIP2012">
       <HintPath>..\..\..\Program Files (x86)\Hedgehog Development\Team Development for Sitecore (VS2012)\HedgehogDevelopment.SitecoreProject.VSIP2012.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,17 +49,20 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Diamond.Tds.License.txt" />
-    <Content Include="T4Templates\Diamond.tt">
-      <LastGenOutput>Diamond.cs</LastGenOutput>
+    <Content Include="Constellation.Sitecore.Items.Tds.License.txt" />
+    <Content Include="T4Templates\Constellation.Sitecore.Items.tt">
+      <LastGenOutput>Constellation.Sitecore.Items.cs</LastGenOutput>
     </Content>
-    <Content Include="T4Templates\DiamondHeader.tt">
-      <LastGenOutput>DiamondHeader.cs</LastGenOutput>
+    <Content Include="T4Templates\Constellation.Sitecore.ItemsHeader.tt">
+      <LastGenOutput>Constellation.Sitecore.ItemsHeader.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="_Instructions.txt" />
-    <Content Include="_Important.txt" />
+    <Content Include="Constellation.Sitecore.Items.Tds.Instructions.txt" />
+    <Content Include="Constellation.Sitecore.Items.Tds.Important.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Constellation.Sitecore.Items.Tds.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

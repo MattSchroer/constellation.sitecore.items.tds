@@ -48,12 +48,7 @@ _Binaries/Sitecore/*.lic
 !/TDS.*/*.scproj
 !/TDS.*/Code Generation Templates
 
-#Glass Specific
-/*.Data/*.Items.cs
-/*.Data/*.Items.*.cs
-/*.Data/Items.cs
-
-#Diamond Specific
+#Constellation.Sitecore.Items Specific
 /*.Data/Items/_Generated.cs
 
 *.nupkg

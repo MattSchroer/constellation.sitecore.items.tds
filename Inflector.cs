@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// Modified to comply with Diamond's StyleCop settings.
+// Modified to comply with Constellation.Sitecore.Items's StyleCop settings.
 
-namespace Diamond.Tds
+namespace Constellation.Sitecore.Items.Tds
 {
 	using System.Collections;
 	using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿Copyright (c) 2013 Richard J. Cabral
+﻿Copyright (c) 2014 Richard J. Cabral
 Portions borrowed from open-source software from HedgeHog Technology.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

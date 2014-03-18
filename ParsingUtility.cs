@@ -1,4 +1,4 @@
-﻿namespace Diamond.Tds
+﻿namespace Constellation.Sitecore.Items.Tds
 {
 	using HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models;
 	using System;
@@ -188,7 +188,7 @@
 		}
 
 		/// <summary>
-		/// Gets a custom property from the data assuming it is querystring format
+		/// Gets a custom property from the data assuming it is query string format
 		/// </summary>
 		/// <param name="data">A string in query string format.</param>
 		/// <param name="key">The key to get the value for.</param>

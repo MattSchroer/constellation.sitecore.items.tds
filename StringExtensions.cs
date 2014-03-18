@@ -1,4 +1,4 @@
-﻿namespace Diamond.Tds
+﻿namespace Constellation.Sitecore.Items.Tds
 {
 	using System;
 	using System.Collections.Generic;
@@ -8,7 +8,7 @@
 	using System.Text;
 
 	/// <summary>
-	/// String object extensions used during T4 Diamond item generation.
+	/// String object extensions used during T4 Constellation.Sitecore.Items item generation.
 	/// </summary>
 	/// <remarks>
 	/// This extension library was forked from Hedgehog Development's T4 starter kit. 

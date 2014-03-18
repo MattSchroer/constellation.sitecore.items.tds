@@ -20,8 +20,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Diamond;
-using Diamond.Items;
-using Diamond.FieldProperties;
+using Constellation.Sitecore;
+using Constellation.Sitecore.Items;
+using Constellation.Sitecore.Items.FieldProperties;
 using Sitecore.Data;
 using Sitecore.Data.Items;

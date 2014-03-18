@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>$id$</id>
+	<version>$version$</version>
+	<title>$title$</title>
+	<authors>Richard J. Cabral</authors>
+	<owners>Richard J. Cabral</owners>
+	<projectUrl>https://github.com/sitecorerick/constellation.sitecore.items.tds</projectUrl>
+	<requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<description>Extending Constellation.Sitecore.Items for Sitecore: https://www.nuget.org/packages/constellation.sitecore.items 
+	Constellation.Sitecore.Items for Team Development for Sitecore provides example T4 templates for use with your Hedgehog Development 
+	TDS plugin. This library also includes a number of string-related methods to help convert Sitecore template paths to C# compatible 
+	namespaces and class names.
+	</description>
+	<summary>
+	Constellation.Sitecore.Items class generating T4 templates and helpful utilities for Hedgehog TDS projects.
+	</summary>
+	<releaseNotes>Initial NuGet release.</releaseNotes>
+	<copyright>Copyright 2014</copyright>
+	<tags>Sitecore, HHogDev, Hedgehog, TDS, Team Development for Sitecore</tags>
+  </metadata>
+</package>
