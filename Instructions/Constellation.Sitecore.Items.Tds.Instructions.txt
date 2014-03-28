@@ -1,4 +1,7 @@
-﻿1.	Configure your TDS project to generate code. Leave the template file references blank for now.
+﻿Instructions
+============
+
+1.	Configure your TDS project to generate code. Leave the template file references blank for now.
 
 2.	Copy the T4Templates\*.tt files to your TDS project. (You can then remove the *.tt files from this project)
 

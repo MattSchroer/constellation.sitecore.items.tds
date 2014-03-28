@@ -35,11 +35,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneralExtensions.cs" />
@@ -49,7 +44,7 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Constellation.Sitecore.Items.Tds.License.txt" />
+    <Content Include="License\Constellation.Sitecore.Items.Tds.License.txt" />
     <Content Include="T4Templates\Constellation.Sitecore.Items.tt">
       <LastGenOutput>Constellation.Sitecore.Items.cs</LastGenOutput>
     </Content>
@@ -58,8 +53,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Constellation.Sitecore.Items.Tds.Instructions.txt" />
-    <Content Include="Constellation.Sitecore.Items.Tds.Important.txt" />
+    <Content Include="Instructions\Constellation.Sitecore.Items.Tds.Instructions.txt" />
+    <Content Include="Instructions\Constellation.Sitecore.Items.Tds.Important.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Constellation.Sitecore.Items.Tds.nuspec" />
