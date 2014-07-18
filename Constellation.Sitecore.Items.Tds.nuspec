@@ -16,7 +16,7 @@
 	<summary>
 	Constellation.Sitecore.Items class generating T4 templates and helpful utilities for Hedgehog TDS projects.
 	</summary>
-	<releaseNotes>Bringing the version up to match the rest of Constellation.</releaseNotes>
+	<releaseNotes>Changed the TT for properties to use Field ID as an ID rather than a string, it's a micro-optimization.</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore, HHogDev, Hedgehog, TDS, Team Development for Sitecore</tags>
   </metadata>

@@ -55,7 +55,7 @@ if (!template.Namespace.Contains("Interfaces"))
 		private <#=fieldType#> <#=privateName#>;
 		public <#=fieldType#> <#= ParsingUtility.GetPropertyName(field) #> 
 		{
-			get { return <#=privateName#> ?? (<#=privateName#> = new <#=fieldType#>(this.GetField("<#=field.ID.ToString()#>"))); }
+			get { return <#=privateName#> ?? (<#=privateName#> = new <#=fieldType#>(this.GetField(new ID("<#=field.ID.ToString()#>")))); }
 		}
 <#
 	} // end foreach getfields for template
