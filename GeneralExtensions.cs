@@ -1,6 +1,7 @@
 ﻿namespace Constellation.Sitecore.Items.Tds
 {
 	using System;
+	using System.Linq;
 	using System.Collections.Generic;
 	using System.Diagnostics.CodeAnalysis;
 
@@ -117,6 +118,40 @@
 			}
 
 			return @out;
+		}
+
+		/// <summary>
+		/// Returns distict items based on the key selector function.
+		/// </summary>
+		/// <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+		/// <typeparam name="TKey">The type of the key</typeparam>
+		/// <param name="source">The sequence of values to remove duplicate items from.</param>
+		/// <param name="keySelector">A function that returns a value for the key based on the input item.</param>
+		/// <returns>A sequence of unique elements based on the key.</returns>
+		public static IEnumerable<TSource> Distinct<TSource,TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
+		{
+			return source.Distinct(new EqualityComparer<TSource, TKey>(keySelector));
+		}
+
+		private class EqualityComparer<TSource, TKey> : IEqualityComparer<TSource>
+		{
+			private Func<TSource, TKey> keySelector;
+
+			public EqualityComparer(Func<TSource, TKey> keySelector)
+			{
+				this.keySelector = keySelector;
+			}
+
+
+			public bool Equals(TSource x, TSource y)
+			{
+				return object.Equals(keySelector(x), keySelector(y));
+			}
+
+			public int GetHashCode(TSource obj)
+			{
+				return keySelector(obj).GetHashCode();
+			}
 		}
 	}
 }
