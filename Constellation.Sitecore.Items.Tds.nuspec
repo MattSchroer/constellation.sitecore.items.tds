@@ -4,7 +4,7 @@
 	<id>$id$</id>
 	<version>$version$</version>
 	<title>$title$</title>
-	<authors>Richard J. Cabral</authors>
+	<authors>Richard J. Cabral, Jimbo Baltikauskas, Maziar Rezaei</authors>
 	<owners>Richard J. Cabral</owners>
 	<projectUrl>https://github.com/sitecorerick/constellation.sitecore.items.tds</projectUrl>
 	<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,7 +16,7 @@
 	<summary>
 	Constellation.Sitecore.Items class generating T4 templates and helpful utilities for Hedgehog TDS projects.
 	</summary>
-	<releaseNotes>Changed the TT for properties to use Field ID as an ID rather than a string, it's a micro-optimization.</releaseNotes>
+	<releaseNotes>Maziar fixed problems with duplicate fields and inheritance declarations during code generation.</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore, HHogDev, Hedgehog, TDS, Team Development for Sitecore</tags>
   </metadata>
