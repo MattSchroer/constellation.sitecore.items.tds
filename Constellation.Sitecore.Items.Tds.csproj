@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HedgehogDevelopment.SitecoreProject.VSIP2012">
-      <HintPath>..\..\..\Program Files (x86)\Hedgehog Development\Team Development for Sitecore (VS2012)\HedgehogDevelopment.SitecoreProject.VSIP2012.dll</HintPath>
+    <Reference Include="HedgehogDevelopment.SitecoreProject.VSIP2013">
+      <HintPath>..\..\Program Files (x86)\Hedgehog Development\Team Development for Sitecore (VS2013)\HedgehogDevelopment.SitecoreProject.VSIP2013.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
