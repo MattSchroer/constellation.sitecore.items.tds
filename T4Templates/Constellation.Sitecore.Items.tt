@@ -45,6 +45,18 @@ if (!template.Namespace.Contains("Interfaces"))
 			get { return new ID("<#= template.ID.ToString() #>"); }
 		}
 
+		public static class FieldNames
+		{
+<#
+	foreach(SitecoreField field in ParsingUtility.GetFieldsForTemplate(template, true))
+	{
+#>
+		public const string <#= ParsingUtility.GetPropertyName(field) #> = "<#= field.Name #>";
+<#
+	}
+#>
+		}
+
 		public <#= template.Name.AsClassName() #>(Item innerItem) : base(innerItem) { }
 <#
 	foreach(SitecoreField field in ParsingUtility.GetFieldsForTemplate(template, true))

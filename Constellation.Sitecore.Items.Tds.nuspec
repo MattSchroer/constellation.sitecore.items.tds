@@ -16,7 +16,7 @@
 	<summary>
 	Constellation.Sitecore.Items class generating T4 templates and helpful utilities for Hedgehog TDS projects.
 	</summary>
-	<releaseNotes>Updated to support VS2013 - Curse you Hedgehog for not making a universal library for code generation.</releaseNotes>
+	<releaseNotes>Updated to support VS2015 - Curse you Hedgehog for not making a universal library for code generation.</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore, HHogDev, Hedgehog, TDS, Team Development for Sitecore</tags>
   </metadata>
