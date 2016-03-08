@@ -72,6 +72,17 @@ if (!template.Namespace.Contains("Interfaces"))
 <#
 	} // end foreach getfields for template
 #>
+		protected static class FieldIDs
+		{
+<#
+		foreach(SitecoreField field in ParsingUtility.GetFieldsForTemplate(template, true))
+		{
+#>
+			public static readonly ID <#= ParsingUtility.GetPropertyName(field) #> = new ID("<#=field.ID.ToString()#>");
+<#
+		} // end foreach getfields for static field ids
+#>
+		}// end static field class
 	} // end class
 <#
 } // end only build concrete for non-interface templates.
@@ -136,6 +147,7 @@ public static string GetCustomFieldType(SitecoreField field)
 			case "grouped droplist":
 			case "filtered multilist":
 			case "multilist":
+			case "multilist with search":
 			case "queryable treelist":
 			case "site based facets":
 			case "site based multilist":
@@ -143,6 +155,7 @@ public static string GetCustomFieldType(SitecoreField field)
 			case "tokenized list":
 			case "treelist":
 			case "treelistex":
+			case "multilist with search and context id":
 				return "MultilistProperty";
 
 			default:
